@@ -1,0 +1,4 @@
+# The image copies the web root file by file, so nothing here can leak into it
+# by accident. These two only ever describe the build.
+Dockerfile
+.dockerignore
