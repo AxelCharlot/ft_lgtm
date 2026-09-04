@@ -1,0 +1,8 @@
+# The build context holds the Go source and nothing else. Everything below is
+# either rebuilt inside the image or has no business in it.
+Dockerfile
+.dockerignore
+lgtm-backend
+bin/
+*.test
+*.wasm

@@ -30,3 +30,14 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+*.pdf
+.vagrant
+.vscode
+
+# Claude
+CLAUDE.md
+memory.md
+plan.md
+.claude/
+/tasks/
