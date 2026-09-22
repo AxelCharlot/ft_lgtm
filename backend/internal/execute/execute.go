@@ -17,7 +17,7 @@ import (
 	"github.com/tetratelabs/wazero/imports/wasi_snapshot_preview1"
 	"github.com/tetratelabs/wazero/sys"
 
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/limited"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/limited"
 )
 
 const (

@@ -20,7 +20,7 @@ import (
 	"syscall"
 	"time"
 
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/limited"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/limited"
 )
 
 const (

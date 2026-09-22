@@ -83,7 +83,7 @@ bucket keeps one exemplar. The first of the three survived; the other two were
 dropped.
 
 The cycle is what bounds it, not the run: `MetricInterval` in
-`backend/internal/telemetry/telemetry.go` is 15 s, and two `endless_loop.rs` runs
+`pkg/telemetry/telemetry.go` is 15 s, and two `endless_loop.rs` runs
 27 s apart both kept their exemplar in the same `le="7.5"` bucket.
 
 So a graph of exemplars is a sample of the runs, never a list of them. A panel

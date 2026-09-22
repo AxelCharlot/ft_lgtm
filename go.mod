@@ -1,4 +1,4 @@
-module gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend
+module github.com/AxelCharlot/ft_lgtm
 
 go 1.25.0
 

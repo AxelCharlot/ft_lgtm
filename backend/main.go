@@ -16,13 +16,13 @@ import (
 	"syscall"
 	"time"
 
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/api"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/compile"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/config"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/execute"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/ipfs"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/run"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/telemetry"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/api"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/compile"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/config"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/execute"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/ipfs"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/run"
+	"github.com/AxelCharlot/ft_lgtm/pkg/telemetry"
 )
 
 // listenAddress is fixed here and not read from the environment, because the

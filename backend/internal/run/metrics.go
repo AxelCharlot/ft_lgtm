@@ -11,7 +11,7 @@ import (
 )
 
 // meterName names this instrumentation inside every metric it produces.
-const meterName = "gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/run"
+const meterName = "github.com/AxelCharlot/ft_lgtm/backend/internal/run"
 
 // The three instrument names of section 6 of k8s/README.md. These are the names
 // in the code; the Collector rewrites them on the way to Prometheus, and section

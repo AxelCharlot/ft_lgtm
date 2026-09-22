@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/compile"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/compile"
 )
 
 // moduleFrom compiles Rust into a module. The alternative is a wasm file in the
