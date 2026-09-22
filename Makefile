@@ -35,7 +35,7 @@ sync:
 
 build: sync
 	for name in $(IMAGES); do \
-		$(GUEST) "docker build --tag lgtm/$$name:$(IMAGE_TAG) /vagrant/$$name"; \
+		$(GUEST) "docker build --tag lgtm/$$name:$(IMAGE_TAG) --file /vagrant/$$name/Dockerfile /vagrant"; \
 		$(GUEST) "set -o pipefail; docker save lgtm/$$name:$(IMAGE_TAG) | sudo k3s ctr images import -"; \
 	done
 	$(GUEST) "docker image prune --force"

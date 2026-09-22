@@ -1,7 +1,10 @@
 # The backend image.
 #
-#   docker build -t lgtm/backend:v1 backend/
+#   docker build -t lgtm/backend:v1 --file backend/Dockerfile .
 #   docker save lgtm/backend:v1 | sudo k3s ctr images import -
+#
+# The context is the repository root, not backend/: the Go module spans
+# backend/ and pkg/, and a context that stops at backend/ cannot see pkg/.
 #
 FROM golang:1.27-alpine AS build
 
@@ -10,11 +13,12 @@ WORKDIR /src
 COPY go.mod go.sum ./
 RUN go mod download
 
-COPY . .
+COPY backend/ backend/
+COPY pkg/ pkg/
 
 # CGO_ENABLED=0 gives one static binary, so the final stage needs no Go and no
 # matching libc. -trimpath keeps the build paths of this machine out of it.
-RUN CGO_ENABLED=0 go build -trimpath -ldflags='-s -w' -o /lgtm-backend .
+RUN CGO_ENABLED=0 go build -trimpath -ldflags='-s -w' -o /lgtm-backend ./backend
 
 FROM rust:1.98.0-slim-bookworm AS toolchain
 

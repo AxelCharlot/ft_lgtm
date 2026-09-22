@@ -11,10 +11,10 @@ import (
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	"go.opentelemetry.io/otel/sdk/trace/tracetest"
 
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/api"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/compile"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/execute"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/ipfs"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/api"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/compile"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/execute"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/ipfs"
 )
 
 // traced runs one pipeline under a recorded root span and returns every span

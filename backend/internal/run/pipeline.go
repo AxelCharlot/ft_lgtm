@@ -18,14 +18,14 @@ import (
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/trace"
 
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/api"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/compile"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/execute"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/ipfs"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/api"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/compile"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/execute"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/ipfs"
 )
 
 // tracerName names this instrumentation inside every span it makes.
-const tracerName = "gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/run"
+const tracerName = "github.com/AxelCharlot/ft_lgtm/backend/internal/run"
 
 // The three span names of section 7. The fourth, the root, is made by the
 // middleware and named in the api package.

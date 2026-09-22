@@ -1,8 +1,12 @@
 // Package telemetry starts the OpenTelemetry SDK and stops it again.
 //
-// The backend never runs without telemetry: the settings come from the five
-// variables of k8s/README.md section 5, and the process refuses to start when
-// one is missing. What this package does not do is fail because the Collector is
+// It lives under pkg/ because it has two users: the backend of this repository
+// and the agents of ft_lgtm_agents. Both inherit the same exemplar chain and
+// the same log bridge instead of writing their own.
+//
+// A process never runs without telemetry: the backend reads its settings from
+// the five variables of k8s/README.md section 5, and refuses to start when one
+// is missing. What this package does not do is fail because the Collector is
 // absent — the exporter connects lazily and retries on its own, so a Collector
 // that is down delays a trace and never a run.
 package telemetry
@@ -29,7 +33,7 @@ import (
 )
 
 // loggerName names this instrumentation on every log record it carries.
-const loggerName = "gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend"
+const loggerName = "github.com/AxelCharlot/ft_lgtm/pkg/telemetry"
 
 // ShutdownTimeout bounds the flush at exit. A pod is given time to stop, and the
 // last trace of the last run is worth a few seconds of it.
@@ -51,9 +55,9 @@ type Shutdown func(context.Context) error
 // carries a trace identifier when it is written through this one.
 //
 // serviceName must be the value of OTEL_SERVICE_NAME. The contract fixes it to
-// lgtm-backend, and the Tempo datasource of #27 queries that same text — when
-// the two differ, "Logs for this span" returns nothing and Grafana reports no
-// error at all.
+// lgtm-backend for the backend, and the Tempo datasource of #27 queries that
+// same text — when the two differ, "Logs for this span" returns nothing and
+// Grafana reports no error at all.
 func Start(ctx context.Context, serviceName, endpoint string) (*slog.Logger, Shutdown, error) {
 	attributes, err := describe(serviceName)
 	if err != nil {

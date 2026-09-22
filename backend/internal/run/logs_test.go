@@ -14,9 +14,9 @@ import (
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	"go.opentelemetry.io/otel/trace"
 
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/api"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/compile"
-	"gitlab.com/42schoolproject/postcommoncore/ft_lgtm/backend/internal/execute"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/api"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/compile"
+	"github.com/AxelCharlot/ft_lgtm/backend/internal/execute"
 )
 
 // captured keeps every record the bridge emits, in order. It stands where the
