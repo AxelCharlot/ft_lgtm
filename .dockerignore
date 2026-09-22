@@ -1,0 +1,15 @@
+# Every image builds from the repository root, so this list is an allow list:
+# the root holds the VM, the working notes and .git, and none of it belongs in
+# an image. Each Dockerfile then copies what it needs, file by file.
+*
+!go.mod
+!go.sum
+!backend/
+!pkg/
+!frontend/
+
+# Built on the host by a developer, rebuilt inside the image.
+backend/lgtm-backend
+**/bin/
+**/*.test
+**/*.wasm
